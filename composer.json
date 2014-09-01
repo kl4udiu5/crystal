@@ -1,0 +1,28 @@
+{
+    "name" : "devwebpeanuts/crystal",
+    "description" : "JSON string validator PHP library",
+    "type" : "library",
+    "authors" : [{
+            "name" : "Romain Renaud",
+            "email" : "contact@romain-renaud.fr"
+        }
+    ],
+    "keywords" : [
+        "JSON",
+        "validator"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require-dev" : {
+        "phpunit/phpunit" : "~3.7"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "Crystal\\" : ""
+        }
+    },
+    "support" : {
+        "issues" : "https://github.com/devwebpeanuts/crystal/issues"
+    }
+}
