@@ -19,7 +19,8 @@
     },
     "autoload" : {
         "psr-4" : {
-            "Crystal\\" : ""
+            "Crystal\\" : "lib",
+            "Crystal\\Tests\\" : "tests"
         }
     },
     "support" : {
