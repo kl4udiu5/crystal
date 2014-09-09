@@ -1,6 +1,6 @@
 <?php
 
-namespace Crystal\Tests\Stubs;
+namespace Crystal\Tests\Stubs\Schemas;
 
 use Crystal\Schema;
 

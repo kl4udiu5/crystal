@@ -8,7 +8,7 @@ class SchemaTest extends PHPUnit_Framework_TestCase
         
     public function testSimpleSchema()
     {
-        $schema = new Stubs\PonySchema();
+        $schema = new Stubs\Schemas\PonySchema();
         
         $expectedObject = $this->getExpectedObject();
         
@@ -17,7 +17,7 @@ class SchemaTest extends PHPUnit_Framework_TestCase
     
     public function testNestedSchemas()
     {
-        $schema = new Stubs\UnicornSchema();
+        $schema = new Stubs\Schemas\UnicornSchema();
         
         $expectedObject = new Types\Object();
         $expectedObject->add('nested', $this->getExpectedObject());
@@ -30,17 +30,17 @@ class SchemaTest extends PHPUnit_Framework_TestCase
      */
     public function testInvalidArgument()
     {
-        $schema = new Stubs\InvalidSchema();
+        $schema = new Stubs\Schemas\InvalidSchema();
     }
     
     private function getExpectedObject()
     {
         $expectedObject = new Types\Object();
-        $expectedObject->add('pony', new Stubs\StubType());
+        $expectedObject->add('pony', new Stubs\Types\PonyType());
         $expectedObject->add('unicorn',
             (new Types\Object())
-                ->add('nyancat', new Stubs\StubType())
-                ->add('leprechaun', new Stubs\StubType())
+                ->add('nyancat', new Stubs\Types\PonyType())
+                ->add('leprechaun', new Stubs\Types\PonyType())
         );
         
         return $expectedObject;

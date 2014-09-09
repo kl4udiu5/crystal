@@ -13,7 +13,7 @@ class ObjectTest extends PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->object = new Types\Object();
-        $this->stubType = new Stubs\StubType();
+        $this->stubType = new Stubs\Types\PonyType();
     }
     
     public function testAddValidType()

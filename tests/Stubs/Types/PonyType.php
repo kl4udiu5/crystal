@@ -1,10 +1,10 @@
 <?php
 
-namespace Crystal\Tests\Stubs;
+namespace Crystal\Tests\Stubs\Types;
 
 use Crystal\Type;
 
-class StubType implements Type
+class PonyType implements Type
 {
     
     public function isValid()
