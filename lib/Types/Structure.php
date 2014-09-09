@@ -19,23 +19,28 @@ abstract class Structure implements Type, \Countable, \Iterator
         return count($this->properties);
     }
     
-    public function rewind() {
+    public function rewind()
+    {
         return reset($this->properties);
     }
     
-    public function current() {
+    public function current()
+    {
         return current($this->properties);
     }
   
-    public function key() {
+    public function key()
+    {
         return key($this->properties);
     }
   
-    public function next() {
+    public function next()
+    {
         return next($this->properties);
     }
   
-    public function valid() {
+    public function valid()
+    {
         return key($this->properties) !== null;
     }
     
