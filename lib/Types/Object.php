@@ -9,12 +9,30 @@ use Crystal\Exceptions\InvalidPropertyException;
 
 class Object extends Structure
 {
+        
+    private
+        $requiredProperties;
 
+    public function __construct()
+    {
+        parent::__construct();
+        
+        $this->requiredProperties = array();
+    }
+    
     public function add($key, Type $type)
     {
         $this->ensureKey($key);
         
         $this->properties[$key] = $type;
+        
+        return $this;
+    }
+    
+    public function addRequired($key, Type $type)
+    {
+        $this->add($key, $type);
+        $this->requiredProperties[] = $key;
         
         return $this;
     }
@@ -56,6 +74,11 @@ class Object extends Structure
         }
         
         return $this->properties[$key];
+    }
+    
+    public function getRequiredProperties()
+    {
+        return $this->requiredProperties;
     }
     
     public function isValid()

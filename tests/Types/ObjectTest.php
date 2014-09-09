@@ -26,6 +26,20 @@ class ObjectTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Crystal\Type', $this->object->get('pony'));
     }
     
+    public function testAddRequiredValidType()
+    {
+        $this->assertFalse($this->object->has('pony'));
+        $this->assertFalse($this->object->has('unicorn'));    
+            
+        $this->object->addRequired('pony', $this->stubType);
+        $this->object->addRequired('unicorn', $this->stubType);
+        
+        $this->assertSame(array('pony', 'unicorn'), $this->object->getRequiredProperties());
+        
+        $this->assertInstanceOf('Crystal\Type', $this->object->get('pony'));
+        $this->assertInstanceOf('Crystal\Type', $this->object->get('unicorn'));
+    }
+    
     public function testPropertyExists()
     {
         $this->object->add('pony', $this->stubType);
